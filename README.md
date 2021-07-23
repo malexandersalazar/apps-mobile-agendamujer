@@ -17,7 +17,20 @@ La Agenda Mujer tiene como pilares fundamentales la defensa del derecho humano d
 * Xamarin.Forms.Bootstrap.Icons (1.5.0)
 * Xamarin.Forms.Maps (5.0.0.2012)
 
-## Instalación
+## Configuración
+
+### Android
+
+Requiere habilitada la **Maps SDK for Android** API en Google Cloud Platform y un recurso de tipo cadena de texto con el nombre `google_maps_api_key` que mantenga el valor de la llave de acceso correspondiente:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google_maps_api_key">TU_GOOGLE_MAPS_API_KEY</string>
+</resources>
+```
+
+## Ejecutables
 
 * [Agenda Mujer - Apps on Google Play](https://play.google.com/store/apps/details?id=com.epicalsoft.agendamujer)
 
