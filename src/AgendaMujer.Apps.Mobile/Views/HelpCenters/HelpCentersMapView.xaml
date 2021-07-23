@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:utility="clr-namespace:AgendaMujer.Apps.Mobile.Utility;assembly=AgendaMujer.Apps.Mobile"
+             utility:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:controls="clr-namespace:AgendaMujer.Apps.Mobile.Controls"
+             x:Class="AgendaMujer.Apps.Mobile.Views.HelpCenters.HelpCentersMapView"
+             Title="Centros de ayuda">
+    <ContentPage.Content>
+        <controls:CustomMap x:Name="MyCustomMap" ItemsSource="{Binding HelpCenters}" IsShowingUser="True" Region="{Binding Region, Mode=TwoWay}">
+            <controls:CustomMap.Behaviors>
+                <xct:EventToCommandBehavior
+                    EventName="Load"
+                    Command="{Binding LoadCommand}" />
+                <xct:EventToCommandBehavior
+                    EventName="MoveEnd"
+                    Command="{Binding MoveEndCommand}" />
+            </controls:CustomMap.Behaviors>
+            <controls:CustomMap.ItemTemplate>
+                <DataTemplate>
+                    <controls:CustomPin Position="{Binding Posicion}" Address="{Binding Direccion}" Label="{Binding Nombre}" InfoWindowClicked="CustomPin_InfoWindowClicked" MarkerClicked="CustomPin_MarkerClicked"/>
+                </DataTemplate>
+            </controls:CustomMap.ItemTemplate>
+        </controls:CustomMap>
+    </ContentPage.Content>
+</ContentPage>

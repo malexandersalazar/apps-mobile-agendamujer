@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaMujer.Apps.Mobile.Views.Home.ArletteContrerasView"
+             Title="Arlette Contreras">
+    
+    <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <Label.FormattedText>
+            <FormattedString>
+                <Span Text="Visitar " />
+                <Span Text="arlettecontreras.com" TextColor="{StaticResource AccentColor}" TextDecorations="Underline">
+                    <Span.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Span.GestureRecognizers>
+                </Span>
+                <Span Text=" en explorador web." />
+            </FormattedString>
+        </Label.FormattedText>
+    </Label>
+    <!--<ContentPage.Content>
+        --><!--<WebView Source="https://www.arlettecontreras.com"/>--><!--
+        <WebView x:Name="MyWebView" Source="https://starlettecontreras001.z20.web.core.windows.net/index.html" />
+    </ContentPage.Content>-->
+</ContentPage>

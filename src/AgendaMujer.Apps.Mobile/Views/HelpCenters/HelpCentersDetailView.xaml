@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:vm="clr-namespace:AgendaMujer.Apps.Mobile.ViewModels.HelpCenters;assembly=AgendaMujer.Apps.Mobile"
+             xmlns:utility="clr-namespace:AgendaMujer.Apps.Mobile.Utility;assembly=AgendaMujer.Apps.Mobile"
+             utility:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:bi="clr-namespace:Xamarin.Forms.Bootstrap.Icons;assembly=Xamarin.Forms.Bootstrap.Icons"
+             x:Class="AgendaMujer.Apps.Mobile.Views.HelpCenters.HelpCentersDetailView"
+             BackgroundColor="{StaticResource AccentColor}" Title="Centro de ayuda">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48" />
+                    <RowDefinition Height="48" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Frame CornerRadius="15" HorizontalOptions="Fill" VerticalOptions="Start"
+                                       BackgroundColor="White" Opacity="0.5" Grid.Row="0" Grid.RowSpan="2" HeightRequest="48"
+                                       Margin="30,36" />
+
+                <Frame Grid.Row="1" Grid.RowSpan="2" Padding="30,36"
+                                       Background="White" CornerRadius="15"
+                                       xct:ShadowEffect.Color="Black">
+                    <StackLayout Orientation="Vertical" Spacing="15">
+                        <Label Text="{Binding HelpCenter.Nombre}" HorizontalTextAlignment="Center" FontSize="Title" />
+
+                        <!--Teléfonos fijos-->
+                        
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Telefono1, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CallPhoneCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Telefono1}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="TelephoneOutbound" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Telefono1}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Telefono2, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CallPhoneCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Telefono2}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="TelephoneOutbound" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Telefono2}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Telefono3, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CallPhoneCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Telefono3}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="TelephoneOutbound" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Telefono3}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!--Celulares-->
+                        
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Celular1, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CallPhoneCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Celular1}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="PhoneVibrate" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Celular1}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Celular2, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CallPhoneCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Celular2}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="PhoneVibrate" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Celular2}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Celular3, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CallPhoneCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Celular3}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="PhoneVibrate" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Celular3}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Correos -->
+
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Correo1, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SendEmailCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Correo1}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="Envelope" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Correo1}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Correo2, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SendEmailCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Correo2}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="Envelope" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Correo2}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame Style="{StaticResource BsButton}" IsVisible="{Binding HelpCenter.Correo3, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SendEmailCommand,Source={RelativeSource AncestorType={x:Type vm:HelpCentersDetailViewModel}}}" CommandParameter="{Binding HelpCenter.Correo3}"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="7.5">
+                                <Image>
+                                    <Image.Source>
+                                        <bi:IconSource Icon="Envelope" Size="18" Color="White"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="{Binding HelpCenter.Correo3}" TextColor="White" FontSize="Subtitle" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="100" HorizontalOptions="Center" VerticalOptions="Center"
+                       BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" Padding="15">
+                    <Image HeightRequest="36">
+                        <Image.Source>
+                            <bi:IconSource Icon="InfoCircle" Size="36" Color="{StaticResource AccentColor}" />
+                        </Image.Source>
+                    </Image>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

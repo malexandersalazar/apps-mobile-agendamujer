@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:bi="clr-namespace:Xamarin.Forms.Bootstrap.Icons;assembly=Xamarin.Forms.Bootstrap.Icons"
+             x:Class="AgendaMujer.Apps.Mobile.Views.Home.AboutView"
+             Title="Acerca" BackgroundColor="{StaticResource AccentColor}">
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Padding="0">
+            <StackLayout Background="White" Padding="30,15,30,0" Spacing="10">
+                <Label Text="Agenda mujer"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center" FontSize="Title" />
+                <Label Text="La Agenda Mujer tiene como pilares fundamentales la defensa del derecho humano de las mujeres a una vida libre de violencia, la igualdad ante la ley y la no discriminación de las personas, priorizando la defensa de aquellas en situación de vulnerabilidad."
+                       HorizontalTextAlignment="Center" TextColor="Black"
+                       FontSize="Subtitle" />
+            </StackLayout>
+            <Image HeightRequest="36" Aspect="Fill" Source="{xct:ImageResource Id=AgendaMujer.Apps.Mobile.Resources.Images.border_bottom.png}" />
+
+            <StackLayout Orientation="Vertical" Padding="7.5">
+                <Grid Padding="7.5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Frame CornerRadius="15" HorizontalOptions="Fill" VerticalOptions="Start"
+                                       BackgroundColor="White" Opacity="0.5" Grid.Row="0" Grid.RowSpan="2" HeightRequest="48"
+                                       Margin="30,36" />
+                    <Frame Grid.Row="1" Grid.RowSpan="2" Padding="30,36"
+                                       Background="White" CornerRadius="15"
+                                       xct:ShadowEffect.Color="Black">
+                        <StackLayout Orientation="Vertical" Spacing="15">
+                            <Label Text="Lucha contra la violencia hacia las mujeres, niñas y niños."
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="Center" FontSize="Title" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="100" HorizontalOptions="Center" VerticalOptions="Center"
+                                       BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" Padding="15">
+                        <Image HeightRequest="36">
+                            <Image.Source>
+                                <bi:IconSource Icon="Megaphone" Size="36" Color="{StaticResource AccentColor}" />
+                            </Image.Source>
+                        </Image>
+                    </Frame>
+                </Grid>
+
+                <Grid Padding="7.5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Frame CornerRadius="15" HorizontalOptions="Fill" VerticalOptions="Start"
+                                       BackgroundColor="White" Opacity="0.5" Grid.Row="0" Grid.RowSpan="2" HeightRequest="48"
+                                       Margin="30,36" />
+                    <Frame Grid.Row="1" Grid.RowSpan="2" Padding="30,36"
+                                       Background="White" CornerRadius="15"
+                                       xct:ShadowEffect.Color="Black">
+                        <StackLayout Orientation="Vertical" Spacing="15">
+                            <Label Text="Empoderamiento de las mujeres para su participación en la vida política, económica y social, libre de discriminación y violencia."
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="Center" FontSize="Title" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="100" HorizontalOptions="Center" VerticalOptions="Center"
+                                       BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" Padding="15">
+                        <Image HeightRequest="36">
+                            <Image.Source>
+                                <bi:IconSource Icon="Stars" Size="36" Color="{StaticResource AccentColor}" />
+                            </Image.Source>
+                        </Image>
+                    </Frame>
+                </Grid>
+
+                <Grid Padding="7.5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="48" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Frame CornerRadius="15" HorizontalOptions="Fill" VerticalOptions="Start"
+                                       BackgroundColor="White" Opacity="0.5" Grid.Row="0" Grid.RowSpan="2" HeightRequest="48"
+                                       Margin="30,36" />
+                    <Frame Grid.Row="1" Grid.RowSpan="2" Padding="30,36"
+                                       Background="White" CornerRadius="15"
+                                       xct:ShadowEffect.Color="Black">
+                        <StackLayout Orientation="Vertical" Spacing="15">
+                            <Label Text="Protección de las personas en situación de vulnerabilidad."
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="Center" FontSize="Title" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="100" HorizontalOptions="Center" VerticalOptions="Center"
+                                       BackgroundColor="White" Grid.Row="0" Grid.RowSpan="2" Padding="15">
+                        <Image HeightRequest="36">
+                            <Image.Source>
+                                <bi:IconSource Icon="ShieldCheck" Size="36" Color="{StaticResource AccentColor}" />
+                            </Image.Source>
+                        </Image>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
